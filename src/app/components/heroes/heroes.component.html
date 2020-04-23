@@ -1,7 +1,7 @@
 <h1>Heroes Marvel y DC</h1>
 <br />
 <div class="card-columns">
-  <div *ngFor="let heroe of heroes" class="card animated fadeIn">
+  <div *ngFor="let heroe of heroes; let i = index" class="card animated fadeIn">
     <img src="{{ heroe.img }}" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">{{ heroe.nombre }}</h5>
@@ -12,8 +12,15 @@
         <small class="text-muted">{{ heroe.aparicion }}</small>
       </p>
     </div>
-    <button type="button" class="btn btn-outline-primary btn-block">
+    <button
+      (click)="verHeroe(i)"
+      type="button"
+      class="btn btn-outline-primary btn-block"
+    >
       Ver mas...
     </button>
+    <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"
+      >Ver link...</a
+    >
   </div>
 </div>
