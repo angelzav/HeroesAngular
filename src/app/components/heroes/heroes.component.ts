@@ -10,7 +10,7 @@ import { from } from "rxjs";
 })
 export class HeroesComponent implements OnInit {
   heroes: Heroe[] = [];
-  constructor(private _heroesService: HeroesService, private _route: Router) {}
+  constructor(private _heroesService: HeroesService, private _router: Router) {}
 
   ngOnInit(): void {
     this.heroes = this._heroesService.getHeroes();
@@ -18,7 +18,7 @@ export class HeroesComponent implements OnInit {
   }
 
   verHeroe(idx: number) {
-    this._route.navigate(["/heroe", idx]);
-    console.log(idx);
+    this._router.navigate(["/heroe", idx]);
+    //console.log(idx);
   }
 }
