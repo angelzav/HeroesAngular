@@ -10,11 +10,11 @@ import { from } from "rxjs";
 })
 export class HeroesComponent implements OnInit {
   heroes: Heroe[] = [];
-  constructor(private _heroesService: HeroesService, private _router: Router) {}
+  constructor(private heroesService: HeroesService, private _router: Router) {}
 
   ngOnInit(): void {
-    this.heroes = this._heroesService.getHeroes();
-    console.log(this.heroes);
+    this.heroes = this.heroesService.getHeroes();
+    //console.log(this.heroes);
   }
 
   verHeroe(idx: number) {
